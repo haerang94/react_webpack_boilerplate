@@ -1,18 +1,20 @@
 import React from "react";
-import 'App.css'
-import thumb from './thumb.png';
+import { ThemeProvider } from "styled-components";
+import theme from "styles/theme";
+import GlobalStyle from "styles/globalStyle";
 import styled from 'styled-components';
-import Test from 'components/Test';
 
 const Header=styled.h1`
     color:blue;
 `;
 
 const App = () => {
- return <div><Header>react webpack boilerplate</Header>
- <Test/>
- <img src={thumb} alt="image"></img>
- </div>
+    return (
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+            <Header>boilerplate</Header>
+        </ThemeProvider>
+      );
 };
 
 export default App;
